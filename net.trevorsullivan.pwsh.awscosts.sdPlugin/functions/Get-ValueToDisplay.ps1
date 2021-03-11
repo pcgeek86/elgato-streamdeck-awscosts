@@ -14,7 +14,7 @@ function Get-ValueToDisplay {
   if (!$CachedData.LastUpdated -or $TimeSinceLastUpdated.Hours -gt 12) {
     $Interval = [Amazon.CostExplorer.Model.DateInterval]::new()
     $Interval.Start = (Get-date -Day 1).ToString('yyyy-MM-dd')
-    $Interval.End = Get-Date -Format 'yyyy-MM-31'
+    $Interval.End = (Get-Date -Day 1).AddMonths(1).AddDays(-1).ToString('yyyy-MM-dd')
     $Cost = Get-CECostAndUsage -Metric UnblendedCost -TimePeriod $Interval -Granularity MONTHLY -ProfileName cbt -Region us-west-2
     $MonthlyCost = '${0:0.##}' -f ([double]$Cost.ResultsByTime[0].Total.UnblendedCost.Amount)
     LogMessage -Message ('Wrote AWS costs to log file: {0}' -f $CacheFile)
