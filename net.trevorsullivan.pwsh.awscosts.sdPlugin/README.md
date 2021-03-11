@@ -10,6 +10,7 @@ If you have an Elgato Stream Deck device, it is a useful tool to simply display 
 1. Set up your AWS credentials profile
 1. Make sure your AWS IAM credentials have an IAM policy attached allowing access to AWS Cost Explorer APIs
 1. Open the `Get-ValueToDisplay.ps1` function and specify your AWS credentials profile name, on the line invoking `Get-CECostAndUsage`
+1. Copy this plugin directory to your `%APPDATA%\Elgato\StreamDeck\Plugins\` directory
 
 **IMPORTANT**: Don't install `AWSPowerShell.NetCore` and `AWS.Tools.*` modules side-by-side. They'll complain about each other.
 
