@@ -1,0 +1,34 @@
+{
+    "Actions": [
+      {
+        "Icon": "assets/pwsh", 
+        "Name": "AWS Cost Display", 
+        "States": [
+          {
+            "Image": "assets/pwsh"
+          }
+        ], 
+        "Tooltip": "Monitor your AWS costs with Elgato Stream Deck", 
+        "UUID": "net.trevorsullivan.awscosts"
+      }
+    ], 
+    "SDKVersion": 2,
+    "Author": "Trevor Sullivan", 
+    "CodePath": "callps.cmd", 
+    "Description": "Trevor Sullivan's plugin to show network interface utilization on Elgato Stream Deck.", 
+    "Name": "PowerShell", 
+    "Icon": "assets/pwsh", 
+    "URL": "https://trevorsullivan.net", 
+    "Version": "1.0.0",
+    "OS": [
+      {
+          "Platform": "windows", 
+          "MinimumVersion" : "10"
+      }
+    ],
+    "Software": 
+      {
+          "MinimumVersion" : "4.1"
+    }
+  }
+  
