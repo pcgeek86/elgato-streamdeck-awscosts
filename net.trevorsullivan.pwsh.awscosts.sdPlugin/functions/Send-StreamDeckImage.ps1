@@ -27,8 +27,9 @@ function Send-StreamDeckImage {
 
         # Generate SVG file
         $SVG = Get-Content -Raw -Path $PSScriptRoot/../assets/template.svg
+        LogMessage -Message 'Retrieved SVG image template'
         $MonthlyCost = Get-ValueToDisplay
-
+        
         $Payload = @{
             event = 'setImage'
             context = $Context
@@ -37,6 +38,7 @@ function Send-StreamDeckImage {
                 target = 0
             }
         }
+        LogMessage -Message 'Created SVG payload to send to Stream Deck'
         
         $PayloadJson = $Payload | ConvertTo-Json
         LogMessage -Message $PayloadJson
